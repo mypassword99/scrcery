@@ -8,7 +8,7 @@ rails g sorcery:install -h #查看sorcery可以有哪些参数。
           user_activation 用户激活
 
 
-config/initializers/sorcery.rb下面会有很多配置，最常用的配置文件有3个
+config/initializers/sorcery.rb下面会有很多配置，如果注册后不需要发送邮件来激活需要配置的文件有3个
 
 #当用户注册成功后，系统sorctory时候帮我们发送邮件。
 
@@ -23,5 +23,5 @@ user.prevent_non_active_users_to_login = false #(时候允许未激活的用户�
 登录不上去
 
 
-官方文档
+主要还得看官方文档
 https://github.com/Sorcery/sorcery
