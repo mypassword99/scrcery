@@ -22,3 +22,6 @@ activation_needed_email 这个方法
 user.prevent_non_active_users_to_login = false #(时候允许未激活的用户登录)如果没有开启用户激活功能，就需要把这里设置为false，否则用户
 登录不上去
 
+
+官方文档
+https://github.com/Sorcery/sorcery
