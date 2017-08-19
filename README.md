@@ -12,8 +12,10 @@ config/initializers/sorcery.rb下面会有很多配置，如果注册后不需�
 
 #当用户注册成功后，系统sorctory时候帮我们发送邮件。
 
-activation needed email method on your mailer class.
-Default: `:activation_needed_email`
+#activation needed email method on your mailer class.
+#Default: `:activation_needed_email`
+
+
 user.user_activation_mailer = nil
 user.activation_mailer_disabled = true #如果不需要发送邮件，就把上面的两句话设置为nil,和true;
 user.user_activation_mailer = UserMailer #如果需要就会在自定义的类中找发送邮件的方法。比如在UserMailer中找
