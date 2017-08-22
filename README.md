@@ -39,3 +39,20 @@ https://github.com/Sorcery/sorcery
 
 
 https://bootswatch.com 这个网址或有各种各样的bootstrap
+# sidekiq--------------------------------------------------------------------------------------
+添加gem 'sidekiq'之后bundle
+
+打开config/application.rb
+添加 config.active_job.queue_adapter = :sidekiq #在rails4之后新添加的active_job组件（gem）针对主流异步任务的统一接口
+打开app/jobs目录(这个目录也是rails4之后，新建目录会给我们自动创建)
+可以把异步任务的类放到这个jobs目录下
+*******
+sidekiq 默认支持的就是redis数据库
+redis默认是6379端口，那么sidekiq默认的就是链接本地的6379
+web本身进程看作是一个客户端，客户端负责生成异步任务，这些任务被存到了redis当中
+sidekiq作为服务端进程，来读取redis当中的异步任务，来负责运行这些异步任务的一些进程。
+
+*******
+
+UserNotification.set(wait: 5.minutes).perform_later("123") #五分钟之后执行。
+UserNotification.perform_later("123") #立即执行。
