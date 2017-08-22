@@ -27,3 +27,15 @@ user.prevent_non_active_users_to_login = false #(时候允许未激活的用户�
 
 主要还得看官方文档
 https://github.com/Sorcery/sorcery
+# bootstrap和fontawesome----------------------------------------------------------------------
+因为assetspapline机制是一个动态解析的文件需要把app/assets/stylesheets下面的application.css改为application.scss
+通过关键字@import 引入bootstap和font-awesome
+@import "bootstrap-sprockets";
+@import "bootstrap";
+@import "font-awesome";
+
+再把bootstop对应的js引入进来 app/assets/javascripts/
+//= require bootstrap-sprockets
+
+
+https://bootswatch.com 这个网址或有各种各样的bootstrap
